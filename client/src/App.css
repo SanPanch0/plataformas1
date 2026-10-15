@@ -1,0 +1,206 @@
+:root {
+  color-scheme: light;
+  --azul: #2563eb;
+  --azul-oscuro: #1d4ed8;
+  --gris: #64748b;
+  --borde: #e2e8f0;
+  --fondo: #f1f5f9;
+  --rojo: #dc2626;
+  --verde: #16a34a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: #0f172a;
+}
+
+.contenedor {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.contador {
+  margin: 0;
+  color: var(--gris);
+  font-size: 0.95rem;
+}
+
+.aviso {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0 0 12px;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0 0 12px;
+}
+
+.error button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario input {
+  flex: 1 1 220px;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.formulario input:focus {
+  outline: 2px solid var(--azul);
+  outline-offset: 1px;
+}
+
+.formulario button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formulario button:hover:not(:disabled) {
+  background: var(--azul-oscuro);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.validacion {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--rojo);
+  font-size: 0.9rem;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tarea-texto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.tarea-texto input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--verde);
+  flex-shrink: 0;
+}
+
+.tarea-texto span {
+  overflow-wrap: anywhere;
+}
+
+.tarea.completada .tarea-texto span {
+  text-decoration: line-through;
+  color: var(--gris);
+}
+
+.btn-eliminar {
+  border: none;
+  background: transparent;
+  color: var(--rojo);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.btn-eliminar:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+.vacio,
+.estado {
+  text-align: center;
+  color: var(--gris);
+  background: #fff;
+  border: 1px dashed var(--borde);
+  border-radius: 8px;
+  padding: 24px 16px;
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 20px 12px 48px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
